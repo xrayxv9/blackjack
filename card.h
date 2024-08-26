@@ -5,50 +5,26 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-int ft_strlen(char *str)
+typedef struct t_card
 {
-	int i = 0;
-
-	while (str[i])
-		i++;
-
-	return (i);
-}
-
-void ft_putstr(char *str)
-{
-	int len = ft_strlen(str);
-	
-	write(1, str, len);
-}
-
-void ft_putchar(char c)
-{
-	write(1, &c,1);
-}
-void ft_putnbr(int nbr)
-{
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-nbr);
-	}
-	else if (nbr >= 10)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else if (nbr < 10)
-	{
-		ft_putchar(nbr + 48);
-	}
-}
-typedef struct	t_card
-{
-	char	*type;
-	int		nbr;
+	char *type;
+	int nbr;
+	int considered;
 } t_card;
+
+int main_game();
+
+void shuffle(t_card *stack);
+
+t_card *fill(t_card *stack);
+
+int ft_strlen(char *str);
+
+void ft_putstr(char *str);
+
+void ft_putchar(char c);
+
+void ft_putnbr(int nbr);
 
 char *ask_value(char *qst);
 
@@ -61,7 +37,5 @@ int get_card(t_card *stack);
 void print_stack(t_card *stack);
 
 void show_card(t_card card);
-
-
 
 #endif

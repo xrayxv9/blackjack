@@ -45,6 +45,7 @@ void shuffle(t_card *stack)
 	{
 		while (stack[i].type)
 		{
+			rando = rand() % 52;
 			ft_swap(stack, i, rando);
 			i++;
 		}
@@ -74,29 +75,26 @@ t_card	*fill(t_card *stack)
 		}
 		i++;
 	}
-	card.type = 0;
-	card.nbr = 0; 
+	card.type = "\0";
+	card.nbr = 0;
+	stack[52] = card;
 	return (stack);	
 }
 
-int	main()
+int	main(void)
 {
-	int count = 0;
-	srand(time(0));
-	t_card *stack = malloc(53 * sizeof(struct t_card));
-	if (!stack)
-		return (1);
-	fill(stack);
-	shuffle(stack);
-	print_stack(stack);
-	count = get_card(stack);
-	ft_putnbr(count);
-	print_stack(stack);
-
-
-
-
-	free(stack);
-
+	while (exploit("Do you want to do a game ?\n"))
+	{
+		main_game();
+	}
 	return (0);
 }
+
+
+/*
+Il ne reste qyue  a modifie le main
+pour que je puisse enchainer les games
+et voir si je peux clean la console avant de relancer une game
+
+bonne nuit chacal tu as fais du bon taf !
+*/
