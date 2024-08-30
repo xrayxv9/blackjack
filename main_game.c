@@ -1,4 +1,4 @@
-#include "card.h"
+#include "lyb.h"
 
 char *ask_value(char *qst)
 {

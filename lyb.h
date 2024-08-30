@@ -12,6 +12,14 @@ typedef struct t_card
 	int considered;
 } t_card;
 
+typedef struct player
+{
+	char *pseudo;
+	int win;
+	int loose;
+} player;
+
+
 int main_game();
 
 void shuffle(t_card *stack);

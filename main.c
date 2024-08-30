@@ -1,4 +1,4 @@
-#include "card.h"
+#include "lyb.h"
 
 char	*type_change(int ty)
 {
