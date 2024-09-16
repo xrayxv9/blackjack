@@ -46,4 +46,10 @@ void print_stack(t_card *stack);
 
 void show_card(t_card card);
 
+int int_len(int nbr);
+
+int char_len(char *str);
+
+char *cast(int nbr, char *str);
+
 #endif
